@@ -1,0 +1,17 @@
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\bin\Debug\net6.0-windows\Lab03_Desamparo.exe
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\bin\Debug\net6.0-windows\Lab03_Desamparo.deps.json
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\bin\Debug\net6.0-windows\Lab03_Desamparo.runtimeconfig.json
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\bin\Debug\net6.0-windows\Lab03_Desamparo.dll
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\bin\Debug\net6.0-windows\Lab03_Desamparo.pdb
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.csproj.AssemblyReference.cache
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.Form1.resources
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.csproj.GenerateResource.cache
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.AssemblyInfoInputs.cache
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.AssemblyInfo.cs
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.csproj.CoreCompileInputs.cache
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.dll
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\refint\Lab03_Desamparo.dll
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.pdb
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\Lab03_Desamparo.genruntimeconfig.cache
+C:\Users\CompLab\Desktop\Lab03_Desamparo\Lab03_Desamparo\obj\Debug\net6.0-windows\ref\Lab03_Desamparo.dll

@@ -1,0 +1,10 @@
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\bin\Debug\LAB6_Desamparo.exe.config
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\bin\Debug\LAB6_Desamparo.exe
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\bin\Debug\LAB6_Desamparo.pdb
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.csproj.AssemblyReference.cache
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.Form1.resources
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.Properties.Resources.resources
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.csproj.GenerateResource.cache
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.csproj.CoreCompileInputs.cache
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.exe
+C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.pdb

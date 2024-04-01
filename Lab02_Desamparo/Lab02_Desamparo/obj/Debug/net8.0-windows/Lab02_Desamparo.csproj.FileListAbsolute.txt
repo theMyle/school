@@ -1,0 +1,16 @@
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.Form1.resources
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.csproj.GenerateResource.cache
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.AssemblyInfoInputs.cache
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.AssemblyInfo.cs
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.csproj.CoreCompileInputs.cache
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\bin\Debug\net8.0-windows\Lab02_Desamparo.exe
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\bin\Debug\net8.0-windows\Lab02_Desamparo.deps.json
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\bin\Debug\net8.0-windows\Lab02_Desamparo.runtimeconfig.json
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\bin\Debug\net8.0-windows\Lab02_Desamparo.dll
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\bin\Debug\net8.0-windows\Lab02_Desamparo.pdb
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.dll
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\refint\Lab02_Desamparo.dll
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.pdb
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\Lab02_Desamparo.genruntimeconfig.cache
+C:\Users\jangk\Desktop\Lab02_Desamparo\Lab02_Desamparo\obj\Debug\net8.0-windows\ref\Lab02_Desamparo.dll
