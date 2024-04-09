@@ -8,3 +8,13 @@ C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.csproj.Gen
 C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.csproj.CoreCompileInputs.cache
 C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.exe
 C:\Users\Ccdi_Complab\Desktop\LAB6_Desamparo\obj\Debug\LAB6_Desamparo.pdb
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\bin\Debug\LAB6_Desamparo.exe.config
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\bin\Debug\LAB6_Desamparo.exe
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\bin\Debug\LAB6_Desamparo.pdb
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\obj\Debug\LAB6_Desamparo.csproj.AssemblyReference.cache
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\obj\Debug\LAB6_Desamparo.Form1.resources
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\obj\Debug\LAB6_Desamparo.Properties.Resources.resources
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\obj\Debug\LAB6_Desamparo.csproj.GenerateResource.cache
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\obj\Debug\LAB6_Desamparo.csproj.CoreCompileInputs.cache
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\obj\Debug\LAB6_Desamparo.exe
+C:\Users\jangk\Documents\Git\school\Intermediate Programming (C#)\LAB06_Desamparo\obj\Debug\LAB6_Desamparo.pdb
