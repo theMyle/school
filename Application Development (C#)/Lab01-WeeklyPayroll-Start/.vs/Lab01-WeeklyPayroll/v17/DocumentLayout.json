@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jangk\\Documents\\School\\Application Development\\Lab01-WeeklyPayroll-Start\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{39F8BFBD-C179-4F3C-9149-B71DBDC071E7}|Lab01-WeeklyPayroll\\Lab01-WeeklyPayroll.csproj|C:\\Users\\jangk\\Documents\\School\\Application Development\\Lab01-WeeklyPayroll-Start\\lab01-weeklypayroll\\frmpayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39F8BFBD-C179-4F3C-9149-B71DBDC071E7}|Lab01-WeeklyPayroll\\Lab01-WeeklyPayroll.csproj|solutionrelative:lab01-weeklypayroll\\frmpayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39F8BFBD-C179-4F3C-9149-B71DBDC071E7}|Lab01-WeeklyPayroll\\Lab01-WeeklyPayroll.csproj|c:\\users\\jangk\\documents\\school\\application development\\lab01-weeklypayroll-start\\lab01-weeklypayroll\\frmpayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{39F8BFBD-C179-4F3C-9149-B71DBDC071E7}|Lab01-WeeklyPayroll\\Lab01-WeeklyPayroll.csproj|solutionrelative:lab01-weeklypayroll\\frmpayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmPayroll.cs",
+              "DocumentMoniker": "C:\\Users\\jangk\\Documents\\School\\Application Development\\Lab01-WeeklyPayroll-Start\\Lab01-WeeklyPayroll\\frmPayroll.cs",
+              "RelativeDocumentMoniker": "Lab01-WeeklyPayroll\\frmPayroll.cs",
+              "ToolTip": "C:\\Users\\jangk\\Documents\\School\\Application Development\\Lab01-WeeklyPayroll-Start\\Lab01-WeeklyPayroll\\frmPayroll.cs",
+              "RelativeToolTip": "Lab01-WeeklyPayroll\\frmPayroll.cs",
+              "ViewState": "AQIAAKMAAAAAAAAAAAAAAMcAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T12:00:19.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmPayroll.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jangk\\Documents\\School\\Application Development\\Lab01-WeeklyPayroll-Start\\Lab01-WeeklyPayroll\\frmPayroll.cs",
+              "RelativeDocumentMoniker": "Lab01-WeeklyPayroll\\frmPayroll.cs",
+              "ToolTip": "C:\\Users\\jangk\\Documents\\School\\Application Development\\Lab01-WeeklyPayroll-Start\\Lab01-WeeklyPayroll\\frmPayroll.cs [Design]",
+              "RelativeToolTip": "Lab01-WeeklyPayroll\\frmPayroll.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T05:44:01.551Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
