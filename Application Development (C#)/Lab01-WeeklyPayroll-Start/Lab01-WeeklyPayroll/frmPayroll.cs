@@ -42,7 +42,10 @@ namespace Lab01_WeeklyPayroll
             // Employee Name
             if (String.IsNullOrEmpty(txtName.Text.Trim()))
             {
-            MessageBox.Show("Employee name must not be empty.", "Name Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Employee name must not be empty.",
+                            "Name Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
             return;
             }
             empName = txtName.Text.Trim();
@@ -54,7 +57,10 @@ namespace Lab01_WeeklyPayroll
             }
             catch 
             {
-                MessageBox.Show("Invalid hourly wage (Must be a number)", "Hourly wage error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid hourly wage (Must be a number)",
+                                "Hourly wage error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                 txtWage.Focus();
                 txtWage.SelectAll();
                 return;
@@ -67,7 +73,10 @@ namespace Lab01_WeeklyPayroll
             }
             catch 
             {
-                MessageBox.Show("Invalid hours worked (must be a number).", "Hours worked error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid hours worked (must be a number).",
+                                "Hours worked error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                 txtHours.Focus();
                 txtHours.SelectAll();
                 return;
@@ -80,7 +89,10 @@ namespace Lab01_WeeklyPayroll
             }
             catch 
             {
-                MessageBox.Show("Invalid number of exemptions (must be a number).", "Number of exemptions error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid number of exemptions (must be a number).",
+                                "Number of exemptions error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                 txtExempts.Focus();
                 txtExempts.SelectAll();
                 return;
@@ -89,7 +101,10 @@ namespace Lab01_WeeklyPayroll
             // Marital Status
             if (String.IsNullOrEmpty(txtMarital.Text.Trim()))
             {
-                MessageBox.Show("Marital status must not be empty.", "Marital status error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Marital status must not be empty.",
+                                "Marital status error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                 txtMarital.Focus();
                 return;
             }
@@ -99,7 +114,10 @@ namespace Lab01_WeeklyPayroll
                 mStatus = txtMarital.Text.Trim().ToUpper();
             } else
             {
-                MessageBox.Show("Marital status must only be (M or S).", "Marital status error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Marital status must only be (M or S).",
+                                "Marital status error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                 txtMarital.Focus();
                 txtMarital.SelectAll();
                 return;
@@ -112,7 +130,10 @@ namespace Lab01_WeeklyPayroll
             }
             catch 
             {
-                MessageBox.Show("Invalid total pay (must be a number).", "Total pay error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid total pay (must be a number).",
+                                "Total pay error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                 txtPriorPay.Focus();
                 txtPriorPay.SelectAll();
                 return;
