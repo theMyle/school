@@ -163,7 +163,7 @@ namespace Lab01_WeeklyPayroll
             double socialSecurity = 0; //Social Security tax for this week
             double medicare = 0; //Medicare tax for this week
             double sum = 0; //Sum of above two taxes
-            const double WAGE_BASE = 106800;
+            const double WAGE_BASE = 90000; //Changed to 9000
             if (totalPay <= WAGE_BASE)
             {
                 socialSecurity = System.Convert.ToDouble(0.062 * pay);
@@ -193,9 +193,28 @@ namespace Lab01_WeeklyPayroll
                 //Find the taxes for "S" Single (See Table 3 from the document
 
                 //WRITE CODE HERE..
-
-
-
+                if (pay >=0 && pay <= 51)
+                {
+                    tax = 0;
+                } else if (pay > 51 && pay <= 188)
+                {
+                    tax = (pay - 51) * 0.1;
+                } else if (pay > 188 && pay <= 606)
+                {
+                    tax = 13.70 + (pay - 188) * 0.15;
+                } else if (pay > 606 && pay <= 1341)
+                {
+                    tax = 76.40 + (pay - 606) * 0.25;
+                } else if (pay > 1341 && pay <= 2922)
+                {
+                    tax = 260.15 + (pay - 1341) * 0.28;
+                } else if (pay > 2922 && pay <= 6313)
+                {
+                    tax = 702.83 + (pay - 2922) * 0.33;
+                } else if (pay > 6313)
+                {
+                    tax = 1821.86 + (pay - 6313) * 0.35;
+                }
                 //-------------------------------------------------------
             }
             else
@@ -204,10 +223,33 @@ namespace Lab01_WeeklyPayroll
                 //Find the taxes for "M" Married (See Table 4 from the document
 
                 //WRITE CODE HERE..
-
+                if (pay >= 0 && pay <= 154)
+                {
+                    tax = 0;
+                } else if (pay > 154 && pay <= 435)
+                {
+                    tax = (pay - 154) * 0.1;
+                } else if (pay > 435 && pay <= 1273)
+                {
+                    tax = 28.10 + (pay - 435) * 0.15;
+                } else if (pay > 1273 && pay <= 2322)
+                {
+                    tax = 153.80 + (pay - 1273) * 0.25;
+                } else if (pay > 2322 &&  pay <= 3646)
+                {
+                    tax = 416.05 + (pay - 2322) * 0.28;
+                } else if (pay > 3646 && pay <= 6409)
+                {
+                    tax = 786.77 + (pay - 3646) * 0.33;
+                } else if (pay > 6409)
+                {
+                    tax = 1698.56 + (pay - 6409) * 0.35;
+                }
                 //-------------------------------------------------------
             }
             fedTax = Math.Round(tax, 2); //Round to nearest cent
+            // says: subtract for each withholding exemption though (61.54 * exemptions)
+            fedTax -= 61.54;
             //-------------------------------------------------------------
 
 
@@ -220,6 +262,14 @@ namespace Lab01_WeeklyPayroll
             lstResults.Items.Add("Payroll results for " + empName);
             lstResults.Items.Add("");
             lstResults.Items.Add("Gross pay this period:" + "   " + string.Format("{0:C}", pay));
+            lstResults.Items.Add("");
+            lstResults.Items.Add("Yr. to Date Earnings:" + "   " + string.Format("{0:C}", totalPay));
+            lstResults.Items.Add("");
+            lstResults.Items.Add("FICA Taxes:" + "   " + string.Format("{0:C}", ficaTax));
+            lstResults.Items.Add("");
+            lstResults.Items.Add("Income Tax Wh.:" + "   " + string.Format("{0:C}", fedTax));
+            lstResults.Items.Add("");
+            lstResults.Items.Add("Check Amount:" + "   " + string.Format("{0:C}", check));
             lstResults.Items.Add("");
             
         }
