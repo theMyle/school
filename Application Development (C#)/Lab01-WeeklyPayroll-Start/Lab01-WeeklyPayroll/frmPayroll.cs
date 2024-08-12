@@ -271,7 +271,6 @@ namespace Lab01_WeeklyPayroll
             lstResults.Items.Add("");
             lstResults.Items.Add("Check Amount:" + "   " + string.Format("{0:C}", check));
             lstResults.Items.Add("");
-            
         }
 
         private void btnNext_Click(object sender, EventArgs e)
