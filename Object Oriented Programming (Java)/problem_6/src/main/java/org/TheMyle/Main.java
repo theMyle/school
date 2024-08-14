@@ -25,6 +25,7 @@ public class Main {
             hoursWorked = Integer.parseInt(input);
         } catch (IOException e) {
             System.out.println("Error");
+            return;
         }
 
         salary = ratePerHour * hoursWorked;

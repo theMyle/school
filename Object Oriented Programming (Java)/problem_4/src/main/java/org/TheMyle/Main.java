@@ -14,13 +14,12 @@ public class Main {
             System.out.print("Enter the temperature in Fahrenheit: ");
             input = reader.readLine();
             F = Double.parseDouble(input);
-
         } catch (IOException e) {
             System.out.println("Error");
+            return;
         }
 
         output = ((F-32) * 5.0)/9;
-        // 5/9 (F-32) not working ?
         System.out.printf("The equivalent temperature in Celsius is: %.2f", output);
     }
 }

@@ -27,6 +27,7 @@ public class Main {
             finalGrade = Integer.parseInt(input);
         } catch (IOException e) {
             System.out.println("Error");
+            return;
         }
 
         prelimGrade *= 0.30F;

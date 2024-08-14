@@ -26,6 +26,7 @@ public class Main {
             salvageValue = Integer.parseInt(input);
         } catch (IOException e) {
             System.out.println("Error");
+            return;
         }
 
         earlyDepreciation = (float) (purchasePrice - salvageValue) / yearsInService;

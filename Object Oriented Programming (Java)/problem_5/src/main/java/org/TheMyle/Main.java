@@ -16,6 +16,7 @@ public class Main {
             C = Double.parseDouble(input);
         } catch (IOException e) {
             System.out.println("Error");
+            return;
         }
 
         output = (9.0/5) * (C + 32);
