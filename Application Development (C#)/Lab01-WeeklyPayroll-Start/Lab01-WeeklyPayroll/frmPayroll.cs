@@ -249,12 +249,12 @@ namespace Lab01_WeeklyPayroll
             }
             fedTax = Math.Round(tax, 2); //Round to nearest cent
             // says: subtract for each withholding exemption though (61.54 * exemptions)
-            fedTax -= 61.54;
+            fedTax -= 61.54; 
             //-------------------------------------------------------------
 
 
             //Task 7: Compute Check amount
-            check = pay - ficaTax - fedTax;
+            check = adjPay - ficaTax - fedTax;
 
 
             //Task 8: Display results of payroll computations
