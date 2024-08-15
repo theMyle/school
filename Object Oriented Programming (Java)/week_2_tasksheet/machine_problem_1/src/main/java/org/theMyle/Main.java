@@ -19,7 +19,7 @@ public class Main {
             System.out.print("Enter divisor: ");
             divisor = Float.parseFloat(reader.readLine());
         } catch (IOException e) {
-            System.out.printf("Error reading input:\n\tError: %s\n",e);
+            System.out.printf("Error reading input:\n\tError: %s\n", e);
             return;
         } catch (NumberFormatException e) {
             System.out.printf("Invalid input type, must be a number:\n\tError: %s\n", e);
@@ -27,14 +27,14 @@ public class Main {
         }
 
         try {
-            quotient = dividend/divisor;
-            remainder = (int)(dividend) % (int)(divisor);
+            quotient = dividend / divisor;
+            remainder = (int) (dividend) % (int) (divisor);
         } catch (ArithmeticException e) {
             System.out.printf("Error computing:\n\tError: %s\n", e);
             return;
         }
 
-        System.out.printf("\nQuotient: %d\n", (int)(quotient));
+        System.out.printf("\nQuotient: %d\n", (int) (quotient));
         System.out.printf("Remainder: %d\n", remainder);
     }
 }

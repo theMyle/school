@@ -182,7 +182,7 @@ namespace Lab01_WeeklyPayroll
             //Compute federal income tax withheld rounded to 2 decimal places
             double adjPay;
             double tax = 0; //Unrounded federal tax withheld
-            adjPay = Convert.ToDouble(pay - (70.19 * allowances));
+            adjPay = Convert.ToDouble(pay - (61.54 * exemptions));
             if (adjPay < 0)
             {
                 adjPay = 0;
@@ -193,27 +193,27 @@ namespace Lab01_WeeklyPayroll
                 //Find the taxes for "S" Single (See Table 3 from the document
 
                 //WRITE CODE HERE..
-                if (pay >=0 && pay <= 51)
+                if (adjPay >=0 && adjPay <= 51)
                 {
                     tax = 0;
-                } else if (pay > 51 && pay <= 188)
+                } else if (adjPay > 51 && adjPay <= 188)
                 {
-                    tax = (pay - 51) * 0.1;
-                } else if (pay > 188 && pay <= 606)
+                    tax = (adjPay - 51) * 0.1;
+                } else if (adjPay > 188 && adjPay <= 606)
                 {
-                    tax = 13.70 + (pay - 188) * 0.15;
-                } else if (pay > 606 && pay <= 1341)
+                    tax = 13.70 + (adjPay - 188) * 0.15;
+                } else if (adjPay > 606 && adjPay <= 1341)
                 {
-                    tax = 76.40 + (pay - 606) * 0.25;
-                } else if (pay > 1341 && pay <= 2922)
+                    tax = 76.40 + (adjPay - 606) * 0.25;
+                } else if (adjPay > 1341 && adjPay <= 2922)
                 {
-                    tax = 260.15 + (pay - 1341) * 0.28;
-                } else if (pay > 2922 && pay <= 6313)
+                    tax = 260.15 + (adjPay - 1341) * 0.28;
+                } else if (adjPay > 2922 && adjPay <= 6313)
                 {
-                    tax = 702.83 + (pay - 2922) * 0.33;
-                } else if (pay > 6313)
+                    tax = 702.83 + (adjPay - 2922) * 0.33;
+                } else if (adjPay > 6313)
                 {
-                    tax = 1821.86 + (pay - 6313) * 0.35;
+                    tax = 1821.86 + (adjPay - 6313) * 0.35;
                 }
                 //-------------------------------------------------------
             }
@@ -223,38 +223,36 @@ namespace Lab01_WeeklyPayroll
                 //Find the taxes for "M" Married (See Table 4 from the document
 
                 //WRITE CODE HERE..
-                if (pay >= 0 && pay <= 154)
+                if (adjPay >= 0 && adjPay <= 154)
                 {
                     tax = 0;
-                } else if (pay > 154 && pay <= 435)
+                } else if (adjPay > 154 && adjPay <= 435)
                 {
-                    tax = (pay - 154) * 0.1;
-                } else if (pay > 435 && pay <= 1273)
+                    tax = (adjPay - 154) * 0.1;
+                } else if (adjPay > 435 && adjPay <= 1273)
                 {
-                    tax = 28.10 + (pay - 435) * 0.15;
-                } else if (pay > 1273 && pay <= 2322)
+                    tax = 28.10 + (adjPay - 435) * 0.15;
+                } else if (adjPay > 1273 && adjPay <= 2322)
                 {
-                    tax = 153.80 + (pay - 1273) * 0.25;
-                } else if (pay > 2322 &&  pay <= 3646)
+                    tax = 153.80 + (adjPay - 1273) * 0.25;
+                } else if (adjPay > 2322 &&  adjPay <= 3646)
                 {
-                    tax = 416.05 + (pay - 2322) * 0.28;
-                } else if (pay > 3646 && pay <= 6409)
+                    tax = 416.05 + (adjPay - 2322) * 0.28;
+                } else if (adjPay > 3646 && adjPay <= 6409)
                 {
-                    tax = 786.77 + (pay - 3646) * 0.33;
-                } else if (pay > 6409)
+                    tax = 786.77 + (adjPay - 3646) * 0.33;
+                } else if (adjPay > 6409)
                 {
-                    tax = 1698.56 + (pay - 6409) * 0.35;
+                    tax = 1698.56 + (adjPay - 6409) * 0.35;
                 }
                 //-------------------------------------------------------
             }
             fedTax = Math.Round(tax, 2); //Round to nearest cent
-            // says: subtract for each withholding exemption though (61.54 * exemptions)
-            fedTax -= 61.54; 
             //-------------------------------------------------------------
 
 
             //Task 7: Compute Check amount
-            check = adjPay - ficaTax - fedTax;
+            check = pay - ficaTax - fedTax;
 
 
             //Task 8: Display results of payroll computations
