@@ -157,7 +157,14 @@ namespace Lab01_WeeklyPayroll
             }
             return true;
         }
-
+        
+        /// <summary>
+        /// This method returns  akjsdkajshdkaj hkj 
+        /// </summary>
+        /// <param name="mStatus"></param>
+        /// <param name="pay"></param>
+        /// <param name="exemptions"></param>
+        /// <returns></returns>
         private double CalculateFedTax(String mStatus, double pay, double exemptions)
         {
             double adjPay;

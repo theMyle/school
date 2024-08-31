@@ -1,3 +1,10 @@
+# directories
 bin/
 obj/
 .vs/
+x64/
+x86/
+
+# files
+*.exe
+*.pdb
