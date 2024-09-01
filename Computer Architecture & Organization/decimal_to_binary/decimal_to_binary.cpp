@@ -1,11 +1,9 @@
-// decimal_to_binary.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <cstdio>
 #include <cmath>
 #include <cassert>
 
 int decToBin(int decimal);
+double decToBin(double decimal);
 void testDecToBin();
 
 int main()
@@ -14,14 +12,36 @@ int main()
 	printf("\nAll tests passed!\n");
 }
 
-int decToBin(int decimal) {
+// for whole numbers
+int decToBin(const int decimal) {
 	int output = 0, remainder = 0, decimalPlace = 0, current_val = decimal;
 
 	while (current_val != 0) {
 		remainder = current_val % 2;
-		current_val = current_val / 2;
+		current_val /= 2;
 		output += remainder * pow(10, decimalPlace);
 		decimalPlace++;
+	}
+
+	return output;
+}
+
+// for fractional number
+double decToBin(const double decimal) {
+	int whole = decimal;
+	double fractional = decimal - whole;
+
+	int remainder = 0;
+	double output = 0;
+	int decimalPlace = -1;
+
+	output = decToBin(whole);
+
+	while (fractional != 0.0) {
+		remainder = fractional * 2;
+		fractional = (fractional * 2) - remainder;
+		output += remainder * pow(10, decimalPlace);
+		decimalPlace--;
 	}
 
 	return output;
@@ -61,6 +81,27 @@ void testDecToBin() {
 	assert(decToBin(testCase) == expected);
 	testCounter++;
 	printf("Test %d passed!\t[Decimal: %d]\t[Binary: %d]\n", testCounter, testCase, expected);
+
+	double testCase2;
+	double expected2;
+
+	testCase2 = 12.75;
+	expected2 = 1100.11;
+	assert(decToBin(testCase2) == expected2);
+	testCounter++;
+	printf("Test %d passed!\t[Decimal: %.2f]\t[Binary: %.2f]\n", testCounter, testCase2, expected2);
+
+	testCase2 = 10.5;
+	expected2 = 1010.1;
+	assert(decToBin(testCase2) == expected2);
+	testCounter++;
+	printf("Test %d passed!\t[Decimal: %.2f]\t[Binary: %.2f]\n", testCounter, testCase2, expected2);
+
+	testCase2 = 0.75;
+	expected2 = 0.11;
+	assert(decToBin(testCase2) == expected2);
+	testCounter++;
+	printf("Test %d passed!\t[Decimal: %.2f]\t[Binary: %.2f]\n", testCounter, testCase2, expected2);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
