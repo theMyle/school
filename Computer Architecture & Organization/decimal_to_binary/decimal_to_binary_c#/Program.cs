@@ -4,26 +4,19 @@ public class Program
 {
     public static void Main(String[] args)
     {
-        Console.WriteLine("Whole:");
-        test_DecToBin(5);
-        test_DecToBin(10);
-        test_DecToBin(20);
+        Console.WriteLine("Decimal to Binary Conversion\n");
 
-        Console.WriteLine("\nFractional:");
-        test_DecToBin(20.5);
-        test_DecToBin(1.75);
-        test_DecToBin(13.25);
-    }
+        Console.Write("Enter a number:\t");
+        String? input = Console.ReadLine();
 
-    public static void test_DecToBin(int input)
-    {
-        int output = NumberSystem.DecToBin(input);
-        Console.WriteLine($"Input: {input}\tBinary: {output}");
-    }
+        double number = 0;
+        if (!Double.TryParse(input, out number))
+        {
+            Console.WriteLine("Error parsing input. Must be a number.");
+            Environment.Exit(1);
+        };
 
-    public static void test_DecToBin(double input)
-    {
-        double output = NumberSystem.DecToBin(input);
-        Console.WriteLine($"Input: {input}\tBinary: {output}");
+        double result = NumberSystem.DecToBin(number);
+        Console.WriteLine($"Binary:\t{result}");
     }
 }

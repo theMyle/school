@@ -5,49 +5,36 @@ namespace NumSysConvLib.Conversions
     /// </summary>
     public static class NumberSystem
     {
-        /// <summary>
-        /// Converts decimal to binary format.
-        /// </summary>
-        /// <param name="number"></param>
-        /// <returns>Binary representation</returns>
+        // Decimal to Binary
         public static int DecToBin(int number)
         {
-            int currentVal = number;
-            int remainder = 0;
-            int decimalPlace = 0;
+            int multiplier = 1;
             int output = 0;
 
-            while (currentVal != 0)
+            while (number != 0)
             {
-                remainder = currentVal % 2;
-                currentVal /= 2;
-                output += remainder * (int)Math.Pow(10, decimalPlace);
-                decimalPlace++;
+                int remainder = number % 2;
+                number /= 2;
+                output += remainder * multiplier;
+                multiplier *= 10;
             }
             return output;
         }
 
-        /// <summary>
-        /// Converts decimal to binary format.
-        /// </summary>
-        /// <param name="number"></param>
-        /// <returns>Binary representation</returns>
         public static double DecToBin(double number)
         {
-            int whole = (int)number;
-            double fractional = number - whole;
-            double output = DecToBin(whole);
-            int decimalPlace = 1;
+            double output = DecToBin((int)number);
+            double fractional = number - (int)number;
+            int decimalPlace = -1;
 
             while (fractional != 0.0)
             {
-                whole = (int)(fractional * 2.0);
+                int whole = (int)(fractional * 2);
                 fractional = (fractional * 2) - whole;
-                output += whole * Math.Pow(10, -decimalPlace);
-                decimalPlace++;
+                output += whole * Math.Pow(10, decimalPlace);
+                decimalPlace--;
             }
             return output;
         }
-
     }
 }
