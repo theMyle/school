@@ -1,0 +1,26 @@
+import javax.swing.*;
+
+public class problem6 {
+	public static void main(String[] args) {
+		String input = "";
+		int num1 = 0;
+		int num2 = 0;
+
+		try {
+			input = JOptionPane.showInputDialog("Enter a number: ");
+			num1 = Integer.parseInt(input);
+
+			input = JOptionPane.showInputDialog("Enter a second number: ");
+			num2 = Integer.parseInt(input);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
+			return;
+		}
+
+		if (num1 == num2) {
+			JOptionPane.showMessageDialog(null, "Sum: " + (num1 + num2));
+		} else {
+			JOptionPane.showMessageDialog(null, "Product: " + (num1 * num2));
+		}
+	}
+}
