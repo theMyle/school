@@ -67,6 +67,37 @@ namespace Lab04_Desamparo
             dataGridView1.DataSource = table;
         }
 
+
+        // BUTTON CLICKS START
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+         private void btn_new_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
+        // BUTTON CLICKS END
+
+        /// <summary>
+        /// Search event trigger when ENTER key is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) {
@@ -74,6 +105,11 @@ namespace Lab04_Desamparo
             }
         }
 
+        /// <summary>
+        /// Search event trigger when textbox is empty.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox1.Text))

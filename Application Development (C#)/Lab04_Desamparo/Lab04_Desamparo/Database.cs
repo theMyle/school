@@ -64,9 +64,11 @@ namespace Lab04_Desamparo
 
         /// <summary>
         /// Returns table containing queried values.
+        /// <br></br>
+        /// With additional parameter for MySqlCommand.Parameters.AddWithValue(String, Object).
         /// </summary>
         /// <param name="sql_command"></param>
-        /// <param name="sql_command_params">A Dictionary parameter for SqlCommand.Parameters.AddWithValue(String, Object)</param>
+        /// <param name="sql_command_params">Dictionary parameter for SqlCommand.Parameters.AddWithValue(String, Object)</param>
         /// <returns></returns>
         public DataTable GetRows(String sql_command, Dictionary<String, object> sql_command_params)
         { 
