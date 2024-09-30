@@ -6,6 +6,21 @@ using MySql.Data.MySqlClient;
 
 namespace Lab03_Desamparo
 {
+
+    /*
+    Notes:
+
+    Data Set -> DataTable
+
+    Provider: -> MySql.Data.MySqlClient
+    1. MySqlConnection  -> Establishing connection
+    2. MySqlCommand     -> Executing sql command
+    3. MySqlDataReader  -> 
+
+    Provider is based on the type of database used.
+    Construct provider first before we can interact with the database.
+     */
+
     public partial class Form1 : Form
     {
         static string server = "localhost";
@@ -14,6 +29,10 @@ namespace Lab03_Desamparo
         static string database = "salecodb";
         static string connectionString = $"SERVER={server};USER={username};PASSWORD={password};DATABASE={database}";
 
+        /// <summary>
+        /// Retrive data from database
+        /// </summary>
+        /// <param name="sql"></param>
         private void LoadData(string sql)
         {
             try
@@ -40,6 +59,8 @@ namespace Lab03_Desamparo
                 MessageBox.Show($"{error.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         public Form1()
         {
