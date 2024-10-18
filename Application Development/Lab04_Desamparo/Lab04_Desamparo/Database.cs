@@ -47,19 +47,27 @@ namespace Lab04_Desamparo
         /// <returns></returns>
         public DataTable GetRows(String raw_sql_string_command) 
         {
-            DataTable table = new DataTable();
-
-            ConnectDB();
-            using (MySqlCommand cmd = new MySqlCommand(raw_sql_string_command, connection))
+            try
             {
-                using (MySqlDataReader reader = cmd.ExecuteReader())
-                {
-                    table.Load(reader);
-                }
-            }
-            CloseDB();
+                DataTable table = new DataTable();
 
-            return table;
+                ConnectDB();
+                using (MySqlCommand cmd = new MySqlCommand(raw_sql_string_command, connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        table.Load(reader);
+                    }
+                }
+                CloseDB();
+
+                return table;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+                return new DataTable();
+            }
         }
 
         /// <summary>
@@ -116,6 +124,31 @@ namespace Lab04_Desamparo
             catch (Exception ex)
             {
                 MessageBox.Show("Error Inserting To Database: " + ex.Message, "INSERT ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                CloseDB();
+            }
+        }
+
+        public void Update(String sql_command, Dictionary<String, Object> sql_command_params) 
+        {
+            try
+            {
+                ConnectDB();
+                using (MySqlCommand command = new MySqlCommand(sql_command, connection))
+                {
+                    foreach (var item in sql_command_params)
+                    {
+                        command.Parameters.AddWithValue(item.Key, item.Value);
+                    }
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Updating Database: " + ex.Message, "UPDATE ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {
