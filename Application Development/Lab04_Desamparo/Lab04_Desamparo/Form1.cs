@@ -91,7 +91,7 @@ namespace Lab04_Desamparo
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2(this);
+            Form4 form = new Form4(this);
             form.ShowDialog();
         }
         // BUTTON CLICKS END

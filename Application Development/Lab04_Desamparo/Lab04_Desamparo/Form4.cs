@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Lab04_Desamparo
 {
-    public partial class Form3 : Form
+    public partial class Form4 : Form
     {
         private Form1 _form1;
         private bool values_updated = false;
@@ -26,8 +26,7 @@ namespace Lab04_Desamparo
         double price = 0;
         double discount = 0;
 
-        
-        public Form3(Form1 form1)
+        public Form4(Form1 form1)
         {
             InitializeComponent();
             _form1 = form1;
@@ -38,9 +37,8 @@ namespace Lab04_Desamparo
             vendor_id_name_pair = helper.LoadVendors(comboBox_vendor);
             LoadProductId();
         }
-        
 
-        private void LoadProductId() 
+        private void LoadProductId()
         {
             String sql_command = "SELECT p_code FROM product";
             DataTable table = db.GetRows(sql_command);
@@ -54,35 +52,34 @@ namespace Lab04_Desamparo
 
         private void comboBox_code_DropDownClosed(object sender, EventArgs e)
         {
-            String sql_command = $@"SELECT p_code, p_descript, p_qoh, p_min, p_price, p_discount, product.v_code, vendor.v_name 
+            String sql_command = $@"SELECT p_code, p_descript, p_qoh, p_min, p_price, p_discount, p_code, vendor.v_name 
                                     FROM product
                                     LEFT JOIN vendor ON product.v_code = vendor.v_code
                                     WHERE p_code = '{comboBox_code.Text}'";
             DataTable table = db.GetRows(sql_command);
-            
-            foreach(DataRow row in table.Rows)
+            DataRow row = table.Rows[0];
+
+            string description = row["p_descript"].ToString();
+            string stocks = row["p_qoh"].ToString();
+            string min_stocks = row["p_min"].ToString();
+            string price = row["p_price"].ToString();
+            string discount = row["p_discount"].ToString();
+            string vendor_name = row["v_name"].ToString();
+
+            textBox_description.Text = description;
+            textBox_stocks.Text = stocks;
+            textBox_min_stocks.Text = min_stocks;
+            textBox_price.Text = price;
+            textBox_discount.Text = discount;
+
+            if (string.IsNullOrEmpty(vendor_name))
             {
-                string description = row["p_descript"].ToString();
-                string stocks = row["p_qoh"].ToString();
-                string min_stocks = row["p_min"].ToString();
-                string price = row["p_price"].ToString();
-                string discount = row["p_discount"].ToString();
-                string vendor_name = row["v_code"] == DBNull.Value ? "" : row["v_name"].ToString();
-
-                textBox_description.Text = description;
-                textBox_stocks.Text = stocks;
-                textBox_min_stocks.Text = min_stocks;
-                textBox_price.Text = price;
-                textBox_discount.Text = discount;
-
-                if (string.IsNullOrEmpty(vendor_name))
-                {
-                    comboBox_vendor.SelectedIndex = 0;
-                } else
-                {
-                    comboBox_vendor.Text = vendor_name;
-                }
+                comboBox_vendor.SelectedIndex = 0;
+            } else
+            {
+                comboBox_vendor.Text = vendor_name;
             }
+
         }
 
         /// <summary>
@@ -99,11 +96,11 @@ namespace Lab04_Desamparo
             if (helper.TxtBoxIsEmpty(textBox_price, "price")) return;
             if (helper.TxtBoxIsEmpty(textBox_discount, "discount")) return;
             if (helper.ComboBoxIsEmpty(comboBox_vendor, "vendor name")) return;
-            
+
             // parse inputs
             code = comboBox_code.Text;
             description = textBox_description.Text;
-            vendor = comboBox_vendor.SelectedItem.ToString();
+            vendor = comboBox_vendor.Text;
 
             if (!helper.ParseInput(textBox_stocks, "Stock", out stocks)) return;
             if (!helper.ParseInput(textBox_min_stocks, "Minimum Stock", out min_stocks)) return;
@@ -111,7 +108,7 @@ namespace Lab04_Desamparo
             if (!helper.ParseInput(textBox_discount, "Discount", out discount)) return;
             discount /= 100;
 
-            UpdateProduct();
+            RemoveProduct();
             values_updated = true;
             Close();
         }
@@ -119,50 +116,34 @@ namespace Lab04_Desamparo
         /// <summary>
         /// Updates a product in the database
         /// </summary>
-        private void UpdateProduct()
+        private void RemoveProduct()
         {
-            String sql_command = "";
-            Dictionary<string, object> sql_args = new Dictionary<string, object>();
-            
             // check if vendor is not present in the database
             if (!vendor_id_name_pair.ContainsKey(vendor))
             {
                 helper.CreateNewVendor(ref vendor_id_name_pair, vendor);
             }
-            
-            sql_command = @"UPDATE product
-                                SET
-                                    p_descript = @description,
-                                    p_qoh = @stocks,
-                                    p_min = @min_stocks,
-                                    p_price = @price,
-                                    p_discount = @discount,
-                                    v_code = @vendor_code
-                                WHERE p_code = @product_code";
 
+            String sql_command = @"DELETE FROM product WHERE p_code = @product_code";
+
+            Dictionary<string, object> sql_args = new Dictionary<string, object>();
             sql_args.Add("@product_code", code);
-            sql_args.Add("@description", description);
-            sql_args.Add("@stocks", stocks);
-            sql_args.Add("@min_stocks", min_stocks);
-            sql_args.Add("@price", price);
-            sql_args.Add("@discount", discount);
-            sql_args.Add("@vendor_code", vendor_id_name_pair[vendor]);
 
-            db.Update(sql_command, sql_args);
+            db.Delete(sql_command, sql_args);
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (values_updated)
             {
-                _form1.Set_Operation_Status($"Operation Success | Item Updated | Item Code: {code}");
+                _form1.Set_Operation_Status($"Operation Success | Item Removed | Item Code: {code}");
                 _form1.Load_Data();
             }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            _form1.Set_Operation_Status("Item Update Operation Cancelled");
+            _form1.Set_Operation_Status("Item Remove Operation Cancelled");
             Close();
         }
     }

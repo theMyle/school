@@ -101,12 +101,12 @@ namespace Lab04_Desamparo
         }
 
         /// <summary>
-        /// Inserts data into the database. sql_command_params is used to sanitize query to avoid sql injection by doing
-        /// raw string interpolation or something. Must be a key value pair ("@something", "value to substitute"). 
+        /// Executes a non-query SQL command (INSERT, UPDATE, DELETE) with parameterized queries to avoid SQL injection.
         /// </summary>
         /// <param name="sql_command"></param>
         /// <param name="sql_command_params"></param>
-        public void Insert(String sql_command, Dictionary<String, Object> sql_command_params) 
+        /// <param name="operationName">The operation being performed, used for error messages</param>
+        private void ExecuteNonQuery(String sql_command, Dictionary<String, Object> sql_command_params, String operationName)
         {
             try
             {
@@ -123,7 +123,7 @@ namespace Lab04_Desamparo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Inserting To Database: " + ex.Message, "INSERT ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Error {operationName} Database: " + ex.Message, $"{operationName.ToUpper()} ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {
@@ -131,29 +131,34 @@ namespace Lab04_Desamparo
             }
         }
 
+        /// <summary>
+        /// Insert into the database
+        /// </summary>
+        /// <param name="sql_command"></param>
+        /// <param name="sql_command_params"></param>
+        public void Insert(String sql_command, Dictionary<String, Object> sql_command_params) 
+        {
+            ExecuteNonQuery(sql_command, sql_command_params, "Insert");
+        }
+
+        /// <summary>
+        /// Updates the database
+        /// </summary>
+        /// <param name="sql_command"></param>
+        /// <param name="sql_command_params"></param>
         public void Update(String sql_command, Dictionary<String, Object> sql_command_params) 
         {
-            try
-            {
-                ConnectDB();
-                using (MySqlCommand command = new MySqlCommand(sql_command, connection))
-                {
-                    foreach (var item in sql_command_params)
-                    {
-                        command.Parameters.AddWithValue(item.Key, item.Value);
-                    }
+            ExecuteNonQuery(sql_command, sql_command_params, "Update");
+        }
 
-                    command.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Updating Database: " + ex.Message, "UPDATE ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            finally
-            {
-                CloseDB();
-            }
+        /// <summary>
+        /// Delete and item from the database
+        /// </summary>
+        /// <param name="sql_command"></param>
+        /// <param name="sql_command_params"></param>
+        public void Delete(String sql_command, Dictionary<String, Object> sql_command_params) 
+        {
+            ExecuteNonQuery(sql_command, sql_command_params, "Delete");
         }
     }
 }
