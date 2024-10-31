@@ -1,3 +1,5 @@
+package problem_01_10;
+
 import javax.swing.*;
 
 public class problem07 {

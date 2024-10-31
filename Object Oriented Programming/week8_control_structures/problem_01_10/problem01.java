@@ -1,3 +1,4 @@
+package problem_01_10;
 
 import javax.swing.*;
 
