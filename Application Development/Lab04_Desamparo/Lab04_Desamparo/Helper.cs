@@ -38,14 +38,22 @@ namespace Lab04_Desamparo
         /// <param name="comboBoxName"></param>
         /// <returns></returns>
         public bool ComboBoxIsEmpty(ComboBox comboBox, string comboBoxName) {
-            if (comboBox.SelectedItem.ToString() == "NULL" || string.IsNullOrEmpty(comboBox.SelectedItem.ToString()))
+            if (comboBox.SelectedItem == null)
             {
-                MessageBox.Show("Product " + comboBoxName + " must not be NULL or empty", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                comboBox.Focus();
-                comboBox.SelectAll();
-                return true;
+                return false;
             }
-            else return false;
+            else
+            {
+
+                if (comboBox.SelectedItem.ToString() == "NULL" || string.IsNullOrEmpty(comboBox.Text))
+                {
+                    MessageBox.Show("Product " + comboBoxName + " must not be NULL or empty", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    comboBox.Focus();
+                    comboBox.SelectAll();
+                    return true;
+                }
+                else return false;
+            }
         }
 
         /// <summary>
@@ -117,6 +125,7 @@ namespace Lab04_Desamparo
             DataTable table = db.GetRows( sql_command );
 
             combobox.Items.Add("NULL");
+            combobox.SelectedIndex = 0;
             vendor_id_name_pair["NULL"] = "";
             
             foreach (DataRow row in table.Rows)
