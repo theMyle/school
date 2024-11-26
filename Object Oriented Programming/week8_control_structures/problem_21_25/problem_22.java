@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Main;
+package problem_21_25;
 
 import javax.swing.*;
-/**
- *
- * @author CCDI_LAB
- */
-public class problem22 {
-    public static void main(String args[]) {
+
+public class problem_22 {
+    public static void main(String[] args){
         double general_average = 0;
         int assignment = 0;
         int seatwork = 0;

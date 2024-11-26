@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package problem_21_25;
 import javax.swing.*;
 /**
  *
  * @author CCDI_LAB
  */
-public class problem23 {
-    public static void main(String args[]) {
+public class problem_23 {
+    public static void main(String[] args){
         String input = "";
         double gpa = 0;
         
