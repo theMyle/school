@@ -18,6 +18,7 @@ namespace SaleCoSystem
                           p_descript,
                           p_price,
                           p_qoh,
+                          p_min,
                           v_name
                         FROM product p
                         LEFT JOIN vendor v
@@ -26,14 +27,33 @@ namespace SaleCoSystem
             if (dt != null)
             {
                 DGV.Rows.Clear();
-                foreach (DataRow data in dt.Rows)
+                foreach (DataRow dr in dt.Rows)
                 {
+                    //DGV.Rows.Add(
+                    //    data["p_code"].ToString(),
+                    //    data["p_descript"].ToString(),
+                    //    data["p_price"].ToString(),
+                    //    data["p_qoh"].ToString(),
+                    //    data["v_name"].ToString()
+                    //);
+                    string quantity = "";
+                    int min = int.Parse(dr["p_min"].ToString());
+                    int qoh = int.Parse(dr["p_qoh"].ToString());
+                    if (qoh < min)
+                    {
+                        quantity = "RESTOCK NEEDED";
+                    }
+                    else
+                    {
+                        quantity = dr["p_qoh"].ToString();
+                    }
+
                     DGV.Rows.Add(
-                        data["p_code"].ToString(),
-                        data["p_descript"].ToString(),
-                        data["p_price"].ToString(),
-                        data["p_qoh"].ToString(),
-                        data["v_name"].ToString()
+                    dr["p_code"].ToString(),
+                    dr["p_descript"].ToString(),
+                    dr["p_price"].ToString(),
+                    quantity,
+                    dr["v_name"].ToString()
                     );
                 }
             }
@@ -65,7 +85,14 @@ namespace SaleCoSystem
         private void DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //get product id
-            string pCode = DGV.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string pCode = "";
+            if (e.RowIndex > -1) { 
+                pCode = DGV.Rows[e.RowIndex].Cells[0].Value.ToString();
+            } else
+            {
+                return;
+            }
+
             switch (e.ColumnIndex)
             {
                 case 5:
@@ -138,6 +165,7 @@ namespace SaleCoSystem
                                 p_descript,
                                 p_price,
                                 p_qoh,
+                                p_min,
                                 v_name
                                 FROM product p
                                 LEFT JOIN vendor v
@@ -151,11 +179,23 @@ namespace SaleCoSystem
                     DGV.Rows.Clear();
                     foreach (DataRow dr in dt.Rows)
                     {
+                        string quantity = "";
+                        int min = int.Parse(dr["p_min"].ToString());
+                        int qoh = int.Parse(dr["p_qoh"].ToString());
+                        if (qoh < min)
+                        {
+                            quantity = "RESTOCK NEEDED";
+                        }
+                        else
+                        {
+                            quantity = dr["p_qoh"].ToString();
+                        }
+
                         DGV.Rows.Add(
                         dr["p_code"].ToString(),
                         dr["p_descript"].ToString(),
                         dr["p_price"].ToString(),
-                        dr["p_qoh"].ToString(),
+                        quantity,
                         dr["v_name"].ToString()
                         );
                     }

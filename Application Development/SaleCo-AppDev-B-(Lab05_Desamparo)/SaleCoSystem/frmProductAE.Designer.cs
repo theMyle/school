@@ -79,6 +79,7 @@
             // 
             pictureBox1.BackColor = Color.FromArgb(8, 34, 47);
             pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = Properties.Resources.dashboard_transaction;
             pictureBox1.Location = new Point(9, 9);
             pictureBox1.Margin = new Padding(6, 5, 6, 5);
             pictureBox1.Name = "pictureBox1";

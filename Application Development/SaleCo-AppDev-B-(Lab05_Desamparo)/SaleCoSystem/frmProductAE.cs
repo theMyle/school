@@ -121,10 +121,10 @@ namespace SaleCoSystem
         }
 
         bool invalidInt(TextBox input, string label) {
-            int buffer = 0;
+            double buffer = 0;
             try
             {
-                buffer = int.Parse(input.Text);
+                buffer = double.Parse(input.Text);
             }
             catch {
                 MessageBox.Show($"{label} empty or invalid (Please enter a valid input)", $"Invalid {label}", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
