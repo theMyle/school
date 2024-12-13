@@ -147,7 +147,7 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(980, 585);
+            this.ClientSize = new System.Drawing.Size(980, 614);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.login_button);
             this.Controls.Add(this.pictureBox4);
@@ -159,7 +159,9 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 632);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(998, 632);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -12,6 +12,8 @@ namespace EventManagementSystem
 {
     public partial class Form1 : Form
     {
+        Database db = new Database();
+
         public Form1()
         {
             InitializeComponent();
@@ -52,10 +54,22 @@ namespace EventManagementSystem
         /// <returns></returns>
         private bool validate_credentials(String username, String password) 
         {
-            if (username == "admin" && password == "admin")
+            String sql = 
+                $@"
+                SELECT password
+                FROM accounts
+                WHERE username = '{username}';
+                ";
+
+            DataTable table = db.QueryData(sql);
+
+            if (table.Rows.Count > 0) 
             {
-                return true;
+                if (password == table.Rows[0]["password"].ToString().Trim()) {
+                    return true;
+                }
             }
+
             return false;
         }
     }

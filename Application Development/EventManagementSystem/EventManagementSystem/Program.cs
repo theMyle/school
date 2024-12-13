@@ -26,8 +26,6 @@ namespace EventManagementSystem
             {
                 Application.Run(new EventManager());
             }
-
-            //Application.Run(new EventManager());
         }
     }
 }

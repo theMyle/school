@@ -58,5 +58,34 @@ namespace EventManagementSystem
             }
         }
 
+        /// <summary>
+        /// Executes non query (INSERT OR UPDATE OR DROP)
+        /// </summary>
+        /// <param name="sql"></param>
+        internal void ExecuteNonQuery(String sql) 
+        {
+            using (MySqlConnection connection = new MySqlConnection(CONNECTION_STRING)) 
+            {
+                try
+                {
+                    // open the connection 
+                    connection.Open();
+
+                    // create an sql command
+                    using (MySqlCommand command = new MySqlCommand(sql, connection)) 
+                    {
+                        // execute the mysql command
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception err) 
+                {
+                    MessageBox.Show("Error connecting to database:\n" + err.Message, "Database connection ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+        }
+
+
     }
 }
