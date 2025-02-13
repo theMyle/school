@@ -8,3 +8,5 @@ elif differentSide == 1:
     print("This is an Isosceles triangle")
 else:
     print("This is an Scalene  triangle")
+
+

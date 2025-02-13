@@ -40,3 +40,5 @@ if status == "Passed":
             print(subject_name, "subject")
 else:
     print("Sorry you failed the semester")
+
+
