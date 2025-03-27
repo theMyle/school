@@ -1,0 +1,7 @@
+Truthy and falsy values with operators
+
+truthy || truthy = left side
+truthy && truthy = right side
+
+0 && 10
+

@@ -74,17 +74,6 @@ let nameToBeAddedToTheGuestList;
 //   }
 
 
-// The lesson earlier about the weird stuff about logical operators
-// && - same truthy, will take the right operand
-// || - will take the first truthy value if present
-
-// var_1 = (conditions required) && guest.name
-// will assign guest.name to var_1 if (conditions required evaluates to true)
-
-// var_2 =  var_1 || `Sorry ${guest.name}, you're not getting itno the event`
-// if var_1 is false then it will take the `Sorry...` as the value since it is truthy
-
-
 nameToBeAddedToTheGuestList =
   ((guest.age >= 21 && guest['has identification'] && guest['identification is real'] && guest['face matches identification'])
     && guest.name)
