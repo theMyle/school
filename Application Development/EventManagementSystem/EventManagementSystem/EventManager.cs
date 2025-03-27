@@ -70,21 +70,26 @@ namespace EventManagementSystem
                     String event_type = row["event_type"].ToString();
 
                     // Convert to dateTime and fix formatting
+                    // start date
                     DateTime start_date = Convert.ToDateTime(row["event_start_datetime"]);
                     String event_start_date = start_date.ToString("dd-MMM-yyyy");
-                    DateTime end_date = Convert.ToDateTime(row["event_end_date"]);
 
-                    // Convert to dateTime and fix formatting
+                    // end date
+                    DateTime end_date = Convert.ToDateTime(row["event_end_date"]);
+                    String event_end_date = end_date.ToString("dd-MMM-yyyy");
+
+                    // start time
                     DateTime start_time = Convert.ToDateTime(row["event_start_datetime"]);
                     String event_start_time = start_time.ToString("h:mm tt");   
 
-                    // calcluate event status
+                    // calcluate and update event status
                     String event_status = row["status"].ToString();
                     event_status = calculate_event_status(start_date, end_date, event_status, id);
 
                     datagrid_events.Rows.Add(
                         id, event_name, event_type, customer_name, 
-                        customer_phone, event_start_date, event_start_time, 
+                        customer_phone, event_start_date, event_end_date,
+                        event_start_time, 
                         event_status
                     );
                 }
@@ -194,7 +199,8 @@ namespace EventManagementSystem
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this booking? (Event_ID: " + selected_event_id + ")", "Booking Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this booking? (Event_ID: " + selected_event_id + ")", 
+					"Booking Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes) 
             { 
@@ -239,10 +245,14 @@ namespace EventManagementSystem
 
             datagrid_events.Rows.Clear();
 
+            // specific search conditions
+            // all 4 permutations
+            // all type, all status
             if (type == "all" && selected_status == "all") 
             {
                 search_condition = ";";
             }
+            // specific type, all status
             else if (type != "all" && selected_status != "all")
             {
                 search_condition =
@@ -251,6 +261,7 @@ namespace EventManagementSystem
                         LOWER(event_type) = LOWER('{type}');
                     ";
             }
+            // specific type, specific status
             else if (type != "all" && selected_status == "all")
             {
                 search_condition =
@@ -260,6 +271,7 @@ namespace EventManagementSystem
                         LOWER(event_type) = LOWER('{type}');
                     ";
             }
+            // all type, specific status
             else if (type == "all" && selected_status != "all")
             {
                 search_condition =
@@ -283,21 +295,26 @@ namespace EventManagementSystem
                     String event_type = row["event_type"].ToString();
 
                     // Convert to dateTime and fix formatting
+                    // start date
                     DateTime start_date = Convert.ToDateTime(row["event_start_datetime"]);
                     String event_start_date = start_date.ToString("dd-MMM-yyyy");
-                    DateTime end_date = Convert.ToDateTime(row["event_end_date"]);
 
-                    // Convert to dateTime and fix formatting
+                    // end date
+                    DateTime end_date = Convert.ToDateTime(row["event_end_date"]);
+                    String event_end_date = end_date.ToString("dd-MMM-yyyy");
+
+                    // start time
                     DateTime start_time = Convert.ToDateTime(row["event_start_datetime"]);
                     String event_start_time = start_time.ToString("h:mm tt");   
 
-                    // calcluate event status
+                    // calcluate and update event status
                     String event_status = row["status"].ToString();
                     event_status = calculate_event_status(start_date, end_date, event_status, id);
 
                     datagrid_events.Rows.Add(
                         id, event_name, event_type, customer_name, 
-                        customer_phone, event_start_date, event_start_time, 
+                        customer_phone, event_start_date, event_end_date,
+                        event_start_time, 
                         event_status
                     );
                 }

@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace EventManagementSystem
         String selected_event_id = "";
         Database db = new Database();
 
+		// EVENT REGISTRATION FORM
         public EventRegistration(String operation, String event_id)
         {
             InitializeComponent();

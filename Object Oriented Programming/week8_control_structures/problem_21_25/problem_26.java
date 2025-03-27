@@ -26,10 +26,5 @@ public class problem_26 {
 
         JOptionPane.showMessageDialog(null,
                 "Total electric bill is P " + total);
-
     }
 }
-
-
-//        else if (kw >= 100 && kw <= 249) {JOptionPane.showMessageDialog(null, "Total electric bill is P " + kw * 50.00);}
-//        else if (kw >= 250) {JOptionPane.showMessageDialog(null, "Total electric bill is P " + kw * 100.00);}

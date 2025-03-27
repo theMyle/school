@@ -1,0 +1,15 @@
+1. I/O Manager - The I/O manager is a part of an operating system that manages peripheral devices
+and ensures stable data transfer between the OS and external devices.
+
+2. Assembler - An assembler translates assembly code into machine code that can be directly executed 
+by the machine.
+
+3. Compiler - A compiler translates high-level programming language code like c++ and java 
+into machine code that can be executed on the target machine.
+
+4. Linker - Linker is the one responsible bundling all the code produced by an assembler or compiler which are
+usually object files and combines them all. It resolves references from different files and links external
+libraries, including the standard library.
+
+5. Loader - The loader is the one responsible for properly loading program into memory preparing it for execution.
+It allocates memory for the program and transfer control to the program's entry point.
